@@ -1,0 +1,44 @@
+var json = {  "service": 
+"lambda",  
+"reference": "https://aws.amazon.com/lambda/avengers/", "questions": [{   
+"q": "What is the real name of the Scarlet Witch?",   
+"a": "Wanda Maximoff" },{   
+"q":"Which film did The Aether first appear in?",   
+"a":"Thor: The Dark World" },{   
+"q":"Which of the infinity stones is hidden on Vormir?",   
+"a":"Soul Stone" },{   
+"q":"What is Captain America's shield made of?",   
+"a":"Vibranium" },{   
+"q":"Which country is Black Panther next in line to be king of?",   
+"a":"Wakanda" },{   
+"q":"What is the real name of Black Widow?",   
+"a":"Natasha Romanoff" },{   
+"q":"What is the name of the axe created for and then used by Thor in Avengers: Infinity War?",  
+"a":"Stormbreaker" },{   
+"q":"What is Loki's title?",   
+"a":"God of Mischief" },{   
+"q":"What is the name of the organisation which is revealed to have infiltrated S.H.I.E.L.D. in Captain 
+America: The Winter Soldier?",   
+"a":"Hydra" },
+{   
+"q":"What nickname does Captain America know the Winter Solider as?",  "a":"Bucky" 
+},
+{   
+"q":"What food do the Avengers go to eat after the Battle of New York in the first Avengers film at Tony 
+Stark's suggestion?",   
+"a":"Shawarma" },{   
+"q":"What type of radiation caused Bruce Banner to become the Hulk?",   
+"a":"Gamma rays" },{   
+"q":"What is the name of the treaty the Avengers are asked to sign which divide the Avengers, bringing us 
+to Captain America: Civil War?",   
+"a":"The Sokovia Accords" },{   
+"q":"Who has directed the most MCU movies?",   
+"a":"The Russo Brothers" }   
+] }   
+exports.handler = function(event, context) {  
+var rand = Math.floor(Math.random() * json.questions.length); console.log("Quote selected: ", rand);  var 
+response = {  
+body: JSON.stringify(json.questions[rand])   
+};  
+console.log(response); context.succeed(response);   
+};  
